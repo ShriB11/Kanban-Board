@@ -7,7 +7,7 @@ uuid
 INSTRUCTIONS:
 
 1. Clone the repository
-2. Perform Yarn add or npm install in the cli inside the local directory of the repo.
+2. Perform yarn or npm install in the cli inside the local directory of the repo.
 3. Then type yarn start to run gthe application on localhost:3000
 
 
@@ -44,4 +44,4 @@ NOTE: If it doesnt render, replace package.json content with the following :
   ]
 }
 
-Delete node modules folder from local dir and run YARN ADD again.
+Delete node modules folder from local dir and run YARN again.
