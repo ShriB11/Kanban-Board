@@ -3,16 +3,16 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import uuid from "uuid/v4";
 
 const itemsFromBackend = [
-  { id: uuid(), content: "First task" },
-  { id: uuid(), content: "Second task" },
-  { id: uuid(), content: "Third task" },
-  { id: uuid(), content: "Fourth task" },
-  { id: uuid(), content: "Fifth task" }
+  { id: uuid(), content: "Task 1" },
+  { id: uuid(), content: "Task 2" },
+  { id: uuid(), content: "Task 3" },
+  { id: uuid(), content: "Task 4" },
+  { id: uuid(), content: "Task 5" }
 ];
 
 const columnsFromBackend = {
   [uuid()]: {
-    name: "Requested",
+    name: "Tasks in Queue",
     items: itemsFromBackend
   },
   [uuid()]: {
@@ -20,7 +20,7 @@ const columnsFromBackend = {
     items: []
   },
   [uuid()]: {
-    name: "In Progress",
+    name: "Doing",
     items: []
   },
   [uuid()]: {
@@ -93,11 +93,11 @@ function App() {
                         ref={provided.innerRef}
                         style={{
                           background: snapshot.isDraggingOver
-                            ? "lightblue"
-                            : "lightgrey",
+                            ? "lightgrey"
+                            : "pink",
                           padding: 4,
                           width: 250,
-                          minHeight: 500
+                          minHeight: 300
                         }}
                       >
                         {column.items.map((item, index) => {
@@ -119,8 +119,8 @@ function App() {
                                       margin: "0 0 8px 0",
                                       minHeight: "50px",
                                       backgroundColor: snapshot.isDragging
-                                        ? "#263B4A"
-                                        : "#456C86",
+                                        ? "#456C86"
+                                        : "purple",
                                       color: "white",
                                       ...provided.draggableProps.style
                                     }}
